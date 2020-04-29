@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".activities.LeaderBoardActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_25">
+
+            <LinearLayout
+                android:id="@+id/rl_leaderboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_50"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_8"
+                android:visibility="visible"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/leaderboard_background"
+                    android:gravity="center"
+                    android:text="@string/rank"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_22" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/leaderboard_background"
+                    android:gravity="center"
+                    android:text="@string/username"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_22" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/leaderboard_background"
+                    android:gravity="center"
+                    android:text="Score"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_22" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_dynamic_leaderboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:orientation="vertical" />
+
+            <Button
+                android:id="@+id/tv_playAgain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_dynamic_leaderboard"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_25"
+                android:padding="@dimen/dp_12"
+                android:text="@string/play_again" />
+
+            <FrameLayout
+                android:id="@+id/fl_progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="visible">
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
