@@ -45,17 +45,32 @@ class LeaderBoardActivity : AppCompatActivity() {
         createDynamicRankRows(rankRowTextView, params, rankRow, getString(R.string.rank_text))
         createDynamicUserNameRows(params, rankRowTextView, rankRow, getString(R.string.username))
         createDynamicScoreRows(params, rankRowTextView, rankRow, getString(R.string.score_text))
-
+        var rank = 1
+        var previousScore = leaderBoardList[0].score
         leaderBoardList.forEachIndexed { index, leaderBoard ->
             val rankRow = TableRow(this@LeaderBoardActivity)
             val rankRowTextView = TextView(this@LeaderBoardActivity)
             val params = TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT)
 
-            createDynamicRankRows(rankRowTextView, params, rankRow, (index+1).toString())
-            createDynamicUserNameRows(params, rankRowTextView, rankRow, leaderBoard.userName.toUpperCase())
-            createDynamicScoreRows(params, rankRowTextView, rankRow,  leaderBoard.score.toString())
-
+            if ((leaderBoard.score == previousScore).not()) {
+                rank = index + 1
+            }
+            previousScore = leaderBoard.score
+            createDynamicRankRows(rankRowTextView, params, rankRow, rank.toString())
+            createDynamicUserNameRows(
+                params,
+                rankRowTextView,
+                rankRow,
+                leaderBoard.userName.toUpperCase()
+            )
+            createDynamicScoreRows(
+                params,
+                rankRowTextView,
+                rankRow,
+                leaderBoard.score.toString()
+            )
         }
+
     }
 
     private fun createDynamicScoreRows(
