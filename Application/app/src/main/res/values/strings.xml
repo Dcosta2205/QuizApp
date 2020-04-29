@@ -8,4 +8,7 @@
     <string name="username">Username</string>
     <string name="rank">Rank</string>
     <string name="play_again">Play Again</string>
+    <string name="rank_text">Rank</string>
+    <string name="score_text">Score</string>
+    <string name="quiz_instructions">1. The Quiz contains 12 Questions.\n2. Each Question will have 30 seconds. \n3. If Questions are not answered within given 30 seconds then it will be navigated to the next question. \n4. You cannot navigate to previous question. \n</string>
 </resources>

@@ -6,89 +6,58 @@
     android:background="@color/background_color"
     tools:context=".activities.LeaderBoardActivity">
 
+    <TextView
+        android:id="@+id/tv_leaderboard_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="LeaderBoard"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_30" />
+
     <ScrollView
+        android:id="@+id/scrollview_leaderboard"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_leaderboard_text"
+        android:background="#3d455b">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/dp_25">
+            android:paddingBottom="@dimen/dp_25">
 
-            <LinearLayout
-                android:id="@+id/rl_leaderboard"
+            <HorizontalScrollView
+                android:id="@+id/hscrll1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_50"
-                android:orientation="horizontal"
-                android:paddingTop="@dimen/dp_8"
-                android:paddingBottom="@dimen/dp_8"
-                android:visibility="visible"
-                android:weightSum="3">
+                android:layout_height="wrap_content">
 
-                <TextView
+                <RelativeLayout
+                    android:id="@+id/RelativeLayout1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/leaderboard_background"
-                    android:gravity="center"
-                    android:text="@string/rank"
-                    android:textColor="@android:color/black"
-                    android:textSize="@dimen/sp_22" />
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center">
 
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/leaderboard_background"
-                    android:gravity="center"
-                    android:text="@string/username"
-                    android:textColor="@android:color/black"
-                    android:textSize="@dimen/sp_22" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/leaderboard_background"
-                    android:gravity="center"
-                    android:text="Score"
-                    android:textColor="@android:color/black"
-                    android:textSize="@dimen/sp_22" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_dynamic_leaderboard"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="120dp"
-                android:orientation="vertical" />
+                    <TableLayout
+                        android:id="@+id/table_main"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+            </HorizontalScrollView>
 
             <Button
-                android:id="@+id/tv_playAgain"
+                android:id="@+id/btn_play_again"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ll_dynamic_leaderboard"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/dp_25"
-                android:padding="@dimen/dp_12"
-                android:text="@string/play_again" />
-
-            <FrameLayout
-                android:id="@+id/fl_progressBar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_below="@id/hscrll1"
                 android:layout_centerInParent="true"
-                android:visibility="visible">
-
-                <ProgressBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_25"
-                    android:layout_gravity="center" />
-            </FrameLayout>
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@drawable/blue_drawable_bg"
+                android:text="Play Again"
+                android:textAllCaps="false" />
         </RelativeLayout>
+
     </ScrollView>
 
 
