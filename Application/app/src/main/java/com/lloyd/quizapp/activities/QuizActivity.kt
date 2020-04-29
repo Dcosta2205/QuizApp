@@ -62,9 +62,7 @@ class QuizActivity : AppCompatActivity(), DialogListener {
                     score++
                 }
                 populateOptionsLayout()
-                Log.d("Lloyd ", " index value $index")
             } else {
-                Toast.makeText(this, "You have completed the quiz ", Toast.LENGTH_SHORT).show()
                 countDownTimer.cancel()
                 if (isRight) {
                     score++
@@ -144,14 +142,12 @@ class QuizActivity : AppCompatActivity(), DialogListener {
             timer = 0
             isTimeElapsed = true
             cancel()
-            Log.d("Lloyd", "OnFinish called")
             if (index <= questionAnswerModelList.size - 1) {
                 tv_next_question.performClick()
             }
         }
 
         override fun onTick(millisUntilFinished: Long) {
-            Log.d("Timer ", "Time spent $millisUntilFinished")
             timer++
             progressbar.progress = (millisUntilFinished / 1000).toInt()
             isTimeElapsed = false
